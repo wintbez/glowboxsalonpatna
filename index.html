@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Glow Box Unisex Salon | Luxury Salon in Patna</title>
+  <meta name="description" content="The Glow Box Unisex Salon in Patna - luxury hair, skin, grooming, spa and bridal services for women and men. Since 2015. 30% off on your first visit." />
+  <meta name="keywords" content="The Glow Box Unisex Salon, luxury salon Patna, unisex salon Patna, bridal makeup Patna, hair salon Patna, men's grooming Patna, beauty salon Patna" />
+  <meta name="theme-color" content="#0b0a0f" />
+  <style>
+    :root{
+      --bg:#0b0a0f;
+      --gold:#d6b36b;
+      --gold-soft:#f2d89c;
+      --purple:#4a2d59;
+      --text:#f7f1e8;
+      --muted:#c4b7a4;
+      --line:rgba(214,179,107,.18);
+      --line-2:rgba(255,255,255,.06);
+      --shadow:0 25px 60px rgba(0,0,0,.45);
+      --radius:22px;
+      --max:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{
+      color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:linear-gradient(180deg,#08070b 0%,#0d0b12 45%,#0b0a0f 100%);
+      overflow-x:hidden;
+    }
+    body:not(.entered){overflow:hidden}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%;object-fit:cover}
+    button,input,select,textarea{font:inherit;cursor:pointer}
+    h1,h2,h3,h4,.serif{font-family:Georgia,"Times New Roman",Times,serif;letter-spacing:.02em}
+    p{line-height:1.75;color:var(--muted)}
+    .shell{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    /* ── EYEBROW ── */
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 14px;border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(214,179,107,.10),rgba(214,179,107,.03));
+      color:var(--gold-soft);font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;
+    }
+    .eyebrow::before{
+      content:"";width:8px;height:8px;border-radius:50%;
+      background:radial-gradient(circle,#fff 0%,var(--gold) 55%,rgba(214,179,107,0) 70%);
+      box-shadow:0 0 18px rgba(214,179,107,.7);
+    }
+
+    /* ── SECTION ── */
+    .section{padding:88px 0}
+    .section-head{margin-bottom:34px}
+    .section-head h2{margin:10px 0 0;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.08}
+    .section-head p{max-width:700px;margin:10px 0 0}
+
+    /* ── GLASS / CARD ── */
+    .glass,.card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015)),linear-gradient(180deg,rgba(74,45,89,.14),rgba(0,0,0,.04));
+      backdrop-filter:blur(10px);border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+
+    /* ── BUTTONS ── */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:48px;padding:12px 22px;border-radius:999px;border:1px solid transparent;
+      transition:transform .25s,box-shadow .25s,background .25s,border-color .25s,color .25s;
+      font-weight:700;letter-spacing:.02em;white-space:nowrap;font-size:.95rem;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      color:#0e0b0f;
+      background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+      box-shadow:0 14px 34px rgba(214,179,107,.25),inset 0 1px 0 rgba(255,255,255,.45);
+    }
+    .btn-primary:hover{box-shadow:0 18px 38px rgba(214,179,107,.35),inset 0 1px 0 rgba(255,255,255,.55)}
+    .btn-outline{border-color:var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+    .btn-outline:hover{background:rgba(255,255,255,.06);border-color:rgba(214,179,107,.35)}
+    .btn-ghost{background:transparent;border-color:rgba(255,255,255,.10);color:var(--muted)}
+    .btn-ghost:hover{color:var(--text);border-color:rgba(214,179,107,.28)}
+
+    /* ── BADGE ── */
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 12px;
+      border-radius:999px;font-size:.85rem;font-weight:700;
+      background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:#efe6da;
+    }
+
+    /* ── NAV ── */
+    .topbar{position:fixed;inset:16px 0 auto;z-index:40;transition:transform .25s}
+    .topbar.scrolled .nav-shell{background:rgba(10,8,14,.88);border-color:rgba(214,179,107,.16);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    .nav-shell{
+      width:min(var(--max),calc(100% - 32px));margin:0 auto;padding:12px 16px;
+      border-radius:999px;border:1px solid rgba(255,255,255,.06);
+      background:rgba(10,8,14,.55);backdrop-filter:blur(16px);
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-mark{
+      width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+      color:#110d11;font-weight:800;font-size:.9rem;flex:0 0 auto;
+      background:radial-gradient(circle at 30% 30%,#fff6d6 0%,var(--gold-soft) 22%,var(--gold) 58%,#8f6a2f 100%);
+      box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 28px rgba(214,179,107,.24);
+    }
+    .brand-word{font-size:1rem;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:Georgia,serif}
+    .brand-sub{color:var(--muted);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+    .nav{display:flex;align-items:center;gap:6px}
+    .nav-links{display:flex;align-items:center;gap:2px}
+    .nav a.nav-link,.dropdown-trigger{
+      border:0;background:transparent;color:var(--muted);
+      padding:9px 11px;border-radius:999px;transition:background .2s,color .2s;font-weight:600;font-size:.9rem;
+    }
+    .nav a.nav-link:hover,.dropdown-trigger:hover,.nav-dropdown.open .dropdown-trigger{color:var(--text);background:rgba(255,255,255,.05)}
+    .nav-cta{display:flex;align-items:center;gap:10px}
+    .menu-toggle{
+      display:none;width:44px;height:44px;border-radius:50%;
+      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--text);font-size:1.1rem;
+    }
+    .nav-dropdown{position:relative}
+    .dropdown-panel{
+      position:absolute;top:calc(100% + 12px);left:0;min-width:250px;padding:10px;
+      border-radius:20px;border:1px solid var(--line);background:rgba(12,10,17,.97);
+      backdrop-filter:blur(14px);box-shadow:var(--shadow);
+      opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s,transform .22s;
+    }
+    .nav-dropdown:hover .dropdown-panel,.nav-dropdown.open .dropdown-panel{opacity:1;transform:translateY(0);pointer-events:auto}
+    .dropdown-panel a{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding:12px 14px;border-radius:14px;color:var(--muted);transition:background .2s,color .2s;
+    }
+    .dropdown-panel a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+    .dropdown-panel a span:last-child{color:var(--gold-soft);font-size:.82rem}
+
+    /* ── INTRO ── */
+    #intro{
+      position:fixed;inset:0;z-index:100;display:grid;place-items:center;
+      background:radial-gradient(circle at center,rgba(214,179,107,.08),transparent 24%),linear-gradient(180deg,#050407 0%,#0b0810 100%);
+      transition:opacity .9s ease,visibility .9s ease;overflow:hidden;
+    }
+    #intro::before{
+      content:"";position:absolute;inset:-20%;
+      background:repeating-linear-gradient(90deg,rgba(214,179,107,.05),rgba(214,179,107,.05) 1px,transparent 1px,transparent 32px);
+      opacity:.55;animation:drift 14s linear infinite;
+    }
+    body.entered #intro{opacity:0;visibility:hidden}
+    @keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-30px,0,0)}}
+    .intro-inner{position:relative;display:flex;flex-direction:column;align-items:center;padding:24px}
+    .orb-button{
+      width:min(52vw,220px);aspect-ratio:1;border-radius:50%;border:0;background:transparent;
+      position:relative;display:grid;place-items:center;
+      filter:drop-shadow(0 0 18px rgba(214,179,107,.18));
+    }
+    .orb-button::before,.orb-button::after,.orb-core{content:"";position:absolute;inset:0;border-radius:50%}
+    .orb-button::before{
+      background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.95),rgba(255,255,255,.4) 12%,rgba(242,216,156,.86) 26%,rgba(214,179,107,.35) 47%,rgba(214,179,107,0) 72%);
+      animation:pulse 2.6s ease-in-out infinite;
+    }
+    .orb-button::after{
+      inset:-18%;border:1px solid rgba(214,179,107,.24);
+      box-shadow:0 0 60px rgba(214,179,107,.12),inset 0 0 40px rgba(214,179,107,.05);
+      animation:ring 3.2s ease-in-out infinite;
+    }
+    .orb-core{
+      inset:18%;
+      background:radial-gradient(circle at 30% 28%,#fffdf2 0%,#fff3ce 18%,#efcf8d 48%,#b2863f 84%,#886224 100%);
+      box-shadow:inset 0 5px 20px rgba(255,255,255,.28),0 0 56px rgba(214,179,107,.34);
+    }
+    .orb-text{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;color:#120e11;font-weight:800;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem}
+    .orb-text strong{font-size:1rem;letter-spacing:.22em}
+    .intro-note{margin:22px 0 0;color:#d8cfbf;letter-spacing:.2em;text-transform:uppercase;font-size:.76rem}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+    @keyframes ring{0%,100%{transform:scale(.96);opacity:.8}50%{transform:scale(1.04);opacity:1}}
+
+    /* ── HERO ── */
+    .hero{min-height:100svh;display:grid;align-items:center;padding:130px 0 80px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .hero-copy h1{margin:18px 0 14px;font-size:clamp(2.6rem,6vw,5rem);line-height:.96}
+    .hero-copy h1 .gold{color:var(--gold-soft)}
+    .hero-copy .tagline{font-size:clamp(1rem,2vw,1.25rem);color:#e8dcc7;margin-bottom:0}
+    .hero-copy .lead{max-width:600px;margin:20px 0 24px;font-size:1rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+    .mini-badges{display:flex;flex-wrap:wrap;gap:8px}
+    .mini-badges .badge{font-size:.8rem}
+
+    /* Hero Visual */
+    .hero-visual{position:relative;height:580px}
+    .frame-main{
+      position:absolute;inset:0 0 52px 52px;overflow:hidden;
+      border-radius:28px;border:1px solid var(--line);box-shadow:var(--shadow);
+    }
+    .frame-main img{width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.02)}
+    .frame-main::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg,rgba(0,0,0,.01) 55%,rgba(0,0,0,.55) 100%);
+      pointer-events:none;
+    }
+    .frame-secondary{
+      position:absolute;left:0;bottom:0;width:200px;overflow:hidden;
+      border-radius:24px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
+    }
+    .frame-secondary img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .hero-float{
+      position:absolute;right:12px;top:16px;display:grid;gap:10px;width:200px;
+    }
+    .float-card{
+      padding:14px 16px;border-radius:18px;border:1px solid var(--line);
+      background:rgba(11,9,15,.80);backdrop-filter:blur(12px);box-shadow:0 16px 40px rgba(0,0,0,.35);
+    }
+    .float-card strong{display:block;font-size:1.45rem;color:var(--gold-soft);margin-bottom:3px}
+    .float-card span{color:#e7dccb;font-weight:600;font-size:.88rem}
+    .hero-caption{
+      position:absolute;left:18px;right:18px;bottom:16px;z-index:2;
+      display:flex;flex-wrap:wrap;gap:8px;
+    }
+
+    /* ── TRUST ── */
+    .trust{padding:0 0 20px}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .trust-card{
+      padding:20px;border-radius:20px;border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+    }
+    .trust-card strong{display:block;font-size:1rem;color:var(--text);margin-bottom:6px}
+    .trust-card p{margin:0;font-size:.9rem}
+
+    /* ── ABOUT ── */
+    .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch}
+    .about-copy{padding:28px}
+    .about-copy h3{margin:10px 0 12px;font-size:clamp(1.4rem,2.8vw,2rem)}
+    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .point{padding:16px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .point strong{display:block;margin-bottom:6px;color:var(--gold-soft);font-size:.95rem}
+    .point span{color:var(--muted);font-size:.9rem}
+    .about-photo{position:relative;overflow:hidden;border-radius:var(--radius);min-height:460px}
+    .about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .about-photo .overlay{
+      position:absolute;left:16px;right:16px;bottom:16px;
+      padding:16px 18px;border-radius:16px;
+      background:rgba(8,6,11,.82);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px);
+    }
+    .about-photo .overlay strong{display:block;font-size:1.05rem;margin-bottom:5px;color:var(--gold-soft);font-family:Georgia,serif}
+    .about-photo .overlay span{color:#ddd2c2;font-size:.9rem}
+
+    /* ── OFFERS ── */
+    .offer-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+    .offer-main{
+      padding:32px;position:relative;overflow:hidden;
+      background:radial-gradient(circle at 88% 16%,rgba(214,179,107,.18),transparent 24%),linear-gradient(135deg,rgba(74,45,89,.35),rgba(0,0,0,.12));
+    }
+    .offer-main h3{margin:12px 0 10px;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.05}
+    .offer-side{display:grid;gap:12px}
+    .offer-mini{
+      padding:20px;border-radius:20px;border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));
+    }
+    .offer-mini strong{display:block;margin-bottom:6px;color:var(--gold-soft)}
+    .offer-mini p{margin:0;font-size:.92rem}
+
+    /* ── SERVICES ── */
+    .service-top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+    .service-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .service-column{padding:22px}
+    .service-column-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .service-column h3{margin:0;font-size:1.35rem}
+    .service-note{color:var(--gold-soft);font-weight:700;font-size:.9rem}
+    .service-group{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025);overflow:hidden;margin-top:10px}
+    .service-group summary{
+      list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+      padding:14px 16px;cursor:pointer;font-weight:800;color:var(--text);
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+    }
+    .service-group summary::-webkit-details-marker{display:none}
+    .service-group summary::after{content:"⌄";color:var(--gold-soft);font-size:1.1rem;transition:transform .25s}
+    .service-group[open] summary::after{transform:rotate(180deg)}
+    .count{margin-left:auto;padding:5px 10px;border-radius:999px;font-size:.78rem;font-weight:700;color:var(--gold-soft);border:1px solid var(--line);background:rgba(214,179,107,.08)}
+    .service-list{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 16px}
+    .service-chip{padding:9px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:#efe6d7;font-size:.88rem}
+
+    /* ── GALLERY ── */
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .gallery-item{
+      grid-column:span 4;position:relative;overflow:hidden;
+      border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);
+      min-height:260px;cursor:pointer;background:#0f0c12;
+    }
+    .gallery-item.wide{grid-column:span 6}
+    .gallery-item.tall{min-height:400px}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease;display:block;position:absolute;inset:0}
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-meta{
+      position:absolute;left:12px;right:12px;bottom:12px;z-index:3;
+      padding:12px 16px;border-radius:14px;
+      background:rgba(8,6,12,.88);border:1px solid rgba(214,179,107,.22);
+      backdrop-filter:blur(16px);
+    }
+    .gallery-meta strong{display:block;font-size:1rem;color:#fff;margin-bottom:2px}
+    .gallery-meta span{color:var(--muted);font-size:.86rem}
+
+    /* ── TESTIMONIALS ── */
+    .testimonial-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .testimonial{padding:24px;min-height:100%}
+    .quote{color:var(--gold-soft);font-size:2rem;line-height:1;margin-bottom:12px}
+    .testimonial p{margin:0 0 16px;font-size:.95rem}
+    .testimonial strong{display:block;color:var(--text)}
+    .testimonial span{color:var(--muted);font-size:.88rem}
+    .stars{color:var(--gold-soft);font-size:.9rem;margin-bottom:10px}
+
+    /* ── BOOKING ── */
+    .booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:start}
+    .booking-copy,.booking-form{padding:26px}
+    .booking-copy h3{margin:10px 0 10px;font-size:clamp(1.5rem,2.8vw,2.1rem)}
+    .steps{display:grid;gap:10px;margin:20px 0 24px}
+    .step{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .step-num{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(214,179,107,.12);color:var(--gold-soft);font-weight:800;border:1px solid var(--line);flex:0 0 auto;font-size:.9rem}
+    .step strong{font-size:.95rem;color:var(--text)}
+    .step p{margin:5px 0 0;font-size:.88rem}
+    form{display:grid;gap:13px}
+    .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .field{display:grid;gap:7px}
+    label{color:#eadfcd;font-size:.9rem;font-weight:700}
+    input,select,textarea{
+      width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);color:var(--text);padding:13px 14px;outline:none;
+      transition:border-color .2s,box-shadow .2s,background .2s;
+    }
+    input:focus,select:focus,textarea:focus{border-color:rgba(214,179,107,.45);box-shadow:0 0 0 4px rgba(214,179,107,.10);background:rgba(255,255,255,.05)}
+    textarea{min-height:120px;resize:vertical}
+    select option{background:#120f17;color:#f6f0e6}
+
+    /* ── CONTACT ── */
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+    .contact-card{padding:20px}
+    .contact-card strong{display:block;margin-bottom:8px;color:var(--gold-soft)}
+    .contact-card p{margin:0 0 14px;font-size:.92rem}
+    .map-card{padding:24px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+    .map-pin{width:68px;height:68px;border-radius:22px;display:grid;place-items:center;font-size:1.75rem;background:linear-gradient(180deg,rgba(214,179,107,.18),rgba(214,179,107,.08));border:1px solid var(--line)}
+
+    /* ── CTA BANNER ── */
+    .cta-banner{padding:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    /* ── FOOTER ── */
+    footer{padding:20px 0 32px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted);font-size:.9rem}
+    .footer-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+
+    /* ── WHATSAPP FAB ── */
+    .whatsapp-fab{
+      position:fixed;right:18px;bottom:18px;z-index:50;width:58px;height:58px;border-radius:50%;
+      display:grid;place-items:center;color:#09120d;
+      background:linear-gradient(180deg,#6ff7a6,#25D366);box-shadow:0 16px 34px rgba(37,211,102,.28);
+      border:0;font-size:1.45rem;transition:transform .25s,box-shadow .25s;
+    }
+    .whatsapp-fab:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 20px 40px rgba(37,211,102,.36)}
+
+    /* ── LIGHTBOX ── */
+    .lightbox{
+      position:fixed;inset:0;z-index:80;display:grid;place-items:center;
+      background:rgba(6,5,8,.88);backdrop-filter:blur(12px);
+      opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;padding:16px;
+    }
+    .lightbox.open{opacity:1;visibility:visible}
+    .lightbox-inner{position:relative;width:min(1000px,100%);border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#0c0a11;box-shadow:var(--shadow)}
+    .lightbox img{width:100%;max-height:76vh;object-fit:cover}
+    .lightbox-caption{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 18px;background:rgba(10,8,14,.94)}
+    .lightbox-close{position:absolute;right:12px;top:12px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.55);color:#fff;font-size:1rem}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media(max-width:1080px){
+      .hero-grid,.about-grid,.offer-wrap,.booking-grid,.service-layout{grid-template-columns:1fr}
+      .hero-visual{height:480px}
+      .frame-main{inset:0 0 48px 44px}
+      .trust-grid,.testimonial-grid,.contact-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-item{grid-column:span 6}
+      .gallery-item.wide{grid-column:span 6}
+    }
+
+    @media(max-width:860px){
+      .menu-toggle{display:grid;place-items:center}
+      .nav{
+        position:fixed;top:82px;left:12px;right:12px;
+        border-radius:22px;border:1px solid var(--line);
+        background:rgba(10,8,14,.97);box-shadow:var(--shadow);backdrop-filter:blur(16px);
+        padding:14px;display:none;flex-direction:column;align-items:stretch;
+      }
+      .nav.open{display:flex}
+      .nav-links{flex-direction:column;align-items:stretch}
+      .nav a.nav-link,.dropdown-trigger{width:100%;text-align:left;padding:13px 14px}
+      .nav-cta{flex-direction:column;width:100%}
+      .nav-cta .btn{width:100%;justify-content:center}
+      .dropdown-panel{position:static;min-width:unset;margin-top:6px;opacity:1;transform:none;pointer-events:auto;display:none;background:rgba(255,255,255,.03)}
+      .nav-dropdown.open .dropdown-panel{display:block}
+      .hero{padding-top:115px;padding-bottom:60px}
+      .hero-visual{height:440px}
+      .hero-float{width:180px}
+      .about-points{grid-template-columns:1fr}
+      .field-grid{grid-template-columns:1fr}
+      .cta-banner,.map-card{flex-direction:column;grid-template-columns:1fr}
+      .map-card{display:flex;flex-direction:column}
+    }
+
+    @media(max-width:640px){
+      .shell{width:calc(100% - 24px)}
+      .nav-shell{width:calc(100% - 24px)}
+      .section{padding:64px 0}
+      .hero{padding-top:100px;padding-bottom:48px}
+      .hero-grid{grid-template-columns:1fr;gap:28px}
+      .hero-copy h1{font-size:clamp(2.2rem,9vw,3.6rem)}
+      .hero-copy .lead{font-size:.95rem}
+      .hero-visual{height:auto;min-height:0;position:relative}
+      /* On mobile hero visual: stacked simplified layout */
+      .frame-main{position:relative;inset:unset;height:300px;border-radius:22px}
+      .frame-secondary{display:none}
+      .hero-float{
+        position:static;width:100%;margin-top:12px;
+        display:grid;grid-template-columns:1fr 1fr;gap:10px;
+      }
+      .float-card{padding:12px 14px}
+      .float-card strong{font-size:1.2rem}
+      .trust-grid,.testimonial-grid,.contact-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr;gap:10px}
+      .gallery-item,.gallery-item.wide{grid-column:span 1;min-height:200px}
+      .gallery-item.tall{min-height:280px}
+      .gallery-meta{padding:10px 12px;left:8px;right:8px;bottom:8px}
+      .gallery-meta strong{font-size:.88rem}
+      .gallery-meta span{font-size:.78rem}
+      .section-head h2{font-size:clamp(1.65rem,7vw,2.4rem)}
+      .offer-main,.offer-mini,.booking-copy,.booking-form,.service-column,.about-copy,.contact-card,.map-card,.cta-banner{padding:18px}
+      .cta-banner h3{font-size:clamp(1.3rem,5vw,1.8rem) !important}
+      .brand-word{font-size:.88rem}
+      .brand-sub{font-size:.66rem}
+      .about-photo{min-height:320px}
+      .testimonial-grid{grid-template-columns:1fr}
+      .mini-badges .badge{font-size:.75rem;padding:6px 10px}
+      footer .footer-row{flex-direction:column;text-align:center;gap:8px}
+    }
+
+    @media(max-width:400px){
+      .gallery-grid{grid-template-columns:1fr}
+      .gallery-item,.gallery-item.wide{grid-column:span 1;min-height:240px}
+      .hero-copy h1{font-size:2rem}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none !important;transition:none !important}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════ INTRO ═══════ -->
+<div id="intro" aria-label="Luxury entrance animation">
+  <div class="intro-inner">
+    <button id="enterGlow" class="orb-button" aria-label="Enter The Glow Box Unisex Salon website">
+      <span class="orb-core"></span>
+      <span class="orb-text"><strong>Enter</strong>Tap The Glow</span>
+    </button>
+    <p class="intro-note">Where Luxury Meets Your Glow</p>
+  </div>
+</div>
+
+<!-- ═══════ TOPBAR ═══════ -->
+<header class="topbar" id="topbar">
+  <div class="nav-shell">
+    <a href="#home" class="brand" aria-label="The Glow Box Unisex Salon home">
+      <span class="brand-mark">GB</span>
+      <span>
+        <div class="brand-word">The Glow Box Unisex Salon</div>
+        <div class="brand-sub">Luxury • Unisex • Since 2015</div>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav" id="navMenu" aria-label="Main navigation">
+      <div class="nav-links">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <div class="nav-dropdown" id="servicesDropdown">
+          <button class="dropdown-trigger" id="servicesTrigger" aria-expanded="false">Services ▾</button>
+          <div class="dropdown-panel">
+            <a href="#services"><span>All Services</span><span>60 Curated</span></a>
+            <a href="#womens-services"><span>Women's Services</span><span>30</span></a>
+            <a href="#mens-services"><span>Men's Services</span><span>30</span></a>
+            <a href="#" id="downloadMenuNav"><span>Download Service Menu</span><span>PDF</span></a>
+            <a href="#booking"><span>Book Appointment</span><span>WhatsApp</span></a>
+          </div>
+        </div>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#offers">Offers</a>
+        <a class="nav-link" href="#testimonials">Reviews</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-outline" href="tel:+919113727139">Call Now</a>
+        <a class="btn btn-primary" href="#booking">Book Now</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="home">
+    <div class="shell hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Premium Unisex Salon in Patna</span>
+        <h1>The <span class="gold">Glow Box</span><br/>Unisex Salon</h1>
+        <p class="tagline">Where Luxury Meets Your Glow</p>
+        <p class="lead">A refined salon experience for women and men — premium hair artistry, skin rituals, grooming, spa care, and bridal elegance in a polished, hygienic environment.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">Book Appointment</a>
+          <a class="btn btn-outline" href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn btn-ghost" href="tel:+919113727139">Call Now</a>
+        </div>
+        <div class="mini-badges">
+          <span class="badge">✨ 30% Off First Visit</span>
+          <span class="badge">🕘 9 AM – 9 PM Daily</span>
+          <span class="badge">🏛️ Est. 2015</span>
+          <span class="badge">📍 In-Parlour Only</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="frame-main">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85" alt="Luxury salon interior with warm gold lighting" loading="eager"/>
+          <div class="hero-caption">
+            <span class="badge">Luxury Ambience</span>
+            <span class="badge">Premium Finish</span>
+          </div>
+        </div>
+        <div class="frame-secondary">
+          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=500&q=85" alt="Professional hair styling session" loading="eager"/>
+        </div>
+        <div class="hero-float">
+          <div class="float-card">
+            <strong>30%</strong>
+            <span>First-visit privilege</span>
+          </div>
+          <div class="float-card">
+            <strong>2015</strong>
+            <span>Years of premium care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TRUST ═══════ -->
+  <section class="trust reveal">
+    <div class="shell trust-grid">
+      <div class="trust-card">
+        <strong>Luxury Ambience</strong>
+        <p>Elegant interiors, warm lighting, premium detailing and calm high-end energy.</p>
+      </div>
+      <div class="trust-card">
+        <strong>Expert Service</strong>
+        <p>Precision cuts, advanced treatments, skin care, grooming and bridal artistry.</p>
+      </div>
+      <div class="trust-card">
+        <strong>Hygiene First</strong>
+        <p>Clean stations, careful handling, and a professional comfort-focused experience.</p>
+      </div>
+      <div class="trust-card">
+        <strong>Unisex Experience</strong>
+        <p>Curated services for women and men with premium care at every touchpoint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ABOUT ═══════ -->
+  <section class="section" id="about">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="eyebrow">About The Brand</span>
+        <h2>Luxury that feels personal, polished, and trustworthy.</h2>
+        <p>Since 2015, The Glow Box Unisex Salon has been serving Patna with a premium salon experience built on consistency, hygiene, expertise, and elegant care for every client who walks in.</p>
+      </div>
+      <div class="about-grid">
+        <div class="glass about-copy reveal">
+          <h3>Crafted for premium clients who expect more than just a service.</h3>
+          <p>At The Glow Box, luxury is not loud — it is thoughtful. From the first welcome to the final finish, every detail is designed to feel refined, comfortable, and confidence-building. Modern beauty techniques paired with a calm, high-trust environment that respects your time and style.</p>
+          <p style="margin-top:14px">We serve both women and men with a curated mix of hair, skin, grooming, spa, and bridal services. Cleanliness, personalised consultation, and a polished atmosphere remain at the heart of our brand.</p>
+          <div class="about-points">
+            <div class="point"><strong>Since 2015</strong><span>Years of trusted salon care and returning clients.</span></div>
+            <div class="point"><strong>Premium Hygiene</strong><span>High attention to cleanliness, comfort, and salon discipline.</span></div>
+            <div class="point"><strong>Expert Styling</strong><span>Hair, skin, grooming, treatments and occasion-ready looks.</span></div>
+            <div class="point"><strong>Luxury Experience</strong><span>Elegant ambience with modern, minimal, high-end appeal.</span></div>
+          </div>
+        </div>
+        <div class="about-photo reveal">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85" alt="Premium luxury salon styling area"/>
+          <div class="overlay">
+            <strong>A salon atmosphere designed to impress quietly.</strong>
+            <span>Luxury aesthetic, warm lighting, premium detailing and a welcoming in-parlour experience.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ OFFERS ═══════ -->
+  <section class="section" id="offers">
+    <div class="shell">
+      <div class="offer-wrap">
+        <div class="glass offer-main reveal">
+          <span class="eyebrow">First Visit Privilege</span>
+          <h3>Enjoy <span style="color:var(--gold-soft)">30% off</span> on your first visit.</h3>
+          <p>Step into The Glow Box with an offer that feels as premium as the experience itself. Ideal for discovering our luxury hair, skin, grooming, spa, and bridal services in person.</p>
+          <div class="hero-actions" style="margin-top:20px;margin-bottom:0">
+            <a class="btn btn-primary" href="#booking">Claim via Booking</a>
+            <a class="btn btn-outline" href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon%2C%20I%20want%20to%20know%20more%20about%20the%2030%25%20first-visit%20offer." target="_blank" rel="noopener">Ask on WhatsApp</a>
+          </div>
+        </div>
+        <div class="offer-side reveal">
+          <div class="offer-mini">
+            <strong>Open Daily</strong>
+            <p>9:00 AM to 9:00 PM for in-parlour appointments and walk-ins subject to availability.</p>
+          </div>
+          <div class="offer-mini">
+            <strong>Premium, Not Rushed</strong>
+            <p>Consultation-led service flow, refined finish, and attentive client care throughout.</p>
+          </div>
+          <div class="offer-mini">
+            <strong>Please Note</strong>
+            <p>No home service. All appointments are in-parlour only for quality and consistency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SERVICES ═══════ -->
+  <section class="section" id="services">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="eyebrow">Luxury Service Menu</span>
+        <h2>Curated services for women and men.</h2>
+        <p>Explore our premium service categories below. Pricing is shared on request so we can guide you based on hair length, skin needs, and styling goals.</p>
+      </div>
+      <div class="service-top reveal">
+        <div class="badge">Contact us for pricing • Personalised recommendations available</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon%2C%20please%20share%20the%20service%20menu%20and%20pricing." target="_blank" rel="noopener" class="btn btn-outline">WhatsApp for Pricing</a>
+          <button class="btn btn-primary" id="downloadMenu">Download Service Menu PDF</button>
+        </div>
+      </div>
+      <div class="service-layout">
+        <div class="glass service-column reveal" id="womens-services">
+          <div class="service-column-head">
+            <h3>Women's Services</h3>
+            <span class="service-note">30 curated services</span>
+          </div>
+          <div id="womenServices"></div>
+        </div>
+        <div class="glass service-column reveal" id="mens-services">
+          <div class="service-column-head">
+            <h3>Men's Services</h3>
+            <span class="service-note">30 curated services</span>
+          </div>
+          <div id="menServices"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GALLERY ═══════ -->
+  <section class="section" id="gallery">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="eyebrow">Gallery</span>
+        <h2>Our signature aesthetic and craftsmanship.</h2>
+        <p>A glimpse into our luxury spaces, precision styling, and the refined experience that awaits you at The Glow Box.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- ═══════ TESTIMONIALS ═══════ -->
+  <section class="section" id="testimonials">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>What our clients say about the experience.</h2>
+        <p>From the moment they step in to the final polish — here's what our clients love about The Glow Box.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="glass testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote">"</div>
+          <p>The ambience feels premium the moment you enter. The consultation was thoughtful and the finish was beautifully done. Worth every rupee.</p>
+          <strong>Simran K.</strong>
+          <span>Hair Styling & Finish</span>
+        </div>
+        <div class="glass testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote">"</div>
+          <p>Clean space, courteous team, and a grooming experience that felt calm rather than rushed. It genuinely feels like a high-end salon visit.</p>
+          <strong>Rahul S.</strong>
+          <span>Men's Grooming</span>
+        </div>
+        <div class="glass testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote">"</div>
+          <p>I loved the luxury black-and-gold feel. The service was professional and hygienic. The first-visit offer made trying the salon an easy yes.</p>
+          <strong>Neha P.</strong>
+          <span>Skin & Spa Service</span>
+        </div>
+        <div class="glass testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <div class="quote">"</div>
+          <p>Beautiful salon, polished bridal guidance, and a confident final look. The experience felt premium from start to finish. Absolutely loved it.</p>
+          <strong>Pooja V.</strong>
+          <span>Bridal Consultation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ BOOKING ═══════ -->
+  <section class="section" id="booking">
+    <div class="shell booking-grid">
+      <div class="glass booking-copy reveal">
+        <span class="eyebrow">Booking</span>
+        <h3>Book your appointment in a few elegant steps.</h3>
+        <p>Submit your details and we will open WhatsApp with a prefilled booking request — fast, personal, and easy to confirm.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div><strong>Select your preferred service</strong><p>Choose the treatment or look you want to book.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div><strong>Pick date and time</strong><p>Share your ideal appointment slot and contact number.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div><strong>Continue on WhatsApp</strong><p>We'll take it from there and help you confirm smoothly.</p></div>
+          </div>
+        </div>
+        <div class="badge">📍 In-parlour appointments only — no home service.</div>
+      </div>
+      <div class="glass booking-form reveal">
+        <form id="bookingForm">
+          <div class="field-grid">
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required/>
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91" required/>
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required></select>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="date">Preferred Date</label>
+              <input id="date" name="date" type="date" required/>
+            </div>
+            <div class="field">
+              <label for="time">Preferred Time</label>
+              <input id="time" name="time" type="time" required/>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Message (Optional)</label>
+            <textarea id="message" name="message" placeholder="Hair length, skin concern, bridal date, preferred stylist..."></textarea>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-primary" type="submit" style="flex:1;min-width:180px">Continue to WhatsApp</button>
+            <a class="btn btn-outline" href="tel:+919113727139">Call Instead</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
+  <section class="section" id="contact">
+    <div class="shell">
+      <div class="section-head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Visit, call, or message us directly.</h2>
+        <p>Located in Patna and open daily — The Glow Box welcomes premium salon bookings for women and men in a beautifully styled in-parlour setting.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="glass contact-card reveal">
+          <strong>📞 Call</strong>
+          <p>+91 91137 27139</p>
+          <a class="btn btn-outline" href="tel:+919113727139">Call Now</a>
+        </div>
+        <div class="glass contact-card reveal">
+          <strong>💬 WhatsApp</strong>
+          <p>Quick booking and pricing assistance</p>
+          <a class="btn btn-outline" href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon" target="_blank" rel="noopener">Chat Now</a>
+        </div>
+        <div class="glass contact-card reveal">
+          <strong>✉️ Email</strong>
+          <p>theglowboxpatna@gmail.com</p>
+          <a class="btn btn-outline" href="mailto:theglowboxpatna@gmail.com">Send Email</a>
+        </div>
+        <div class="glass contact-card reveal">
+          <strong>🕘 Timings</strong>
+          <p>9:00 AM to 9:00 PM<br/>Open daily — in-parlour services</p>
+        </div>
+      </div>
+      <div class="glass map-card reveal">
+        <div>
+          <strong class="serif" style="display:block;font-size:1.25rem;color:var(--gold-soft);margin-bottom:10px;font-family:Georgia,serif">The Glow Box Unisex Salon</strong>
+          <p style="margin:0 0 16px;font-size:.95rem">Singh Complex, Bari Road, near Radha Krishna mandir, Dariyapur Gola, Dujra Diara, Patna, Bihar 800004</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Singh%20Complex%2C%20Bari%20Road%2C%20near%20Radha%20Krishna%20mandir%2C%20Dariyapur%20Gola%2C%20Dujra%20Diara%2C%20Patna%2C%20Bihar%20800004" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-outline" href="#booking">Book Appointment</a>
+          </div>
+        </div>
+        <div class="map-pin" aria-hidden="true">📍</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA BANNER ═══════ -->
+  <section class="section" style="padding-top:16px;padding-bottom:60px">
+    <div class="shell">
+      <div class="glass cta-banner reveal">
+        <div>
+          <span class="eyebrow">Ready To Glow?</span>
+          <h3 style="margin:12px 0 8px;font-size:clamp(1.45rem,3vw,2.2rem)">Luxury hair, skin, grooming, and bridal care — under one premium roof.</h3>
+          <p style="margin:0">Book your visit and experience The Glow Box difference in person.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#booking">Book Appointment</a>
+          <a class="btn btn-outline" href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="shell footer-row">
+    <div>© <span id="year"></span> The Glow Box Unisex Salon • Where Luxury Meets Your Glow</div>
+    <div>Patna, Bihar • Since 2015 • In-Parlour Services Only</div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/919113727139?text=Hello%20The%20Glow%20Box%20Unisex%20Salon" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">✕</button>
+    <img id="lightboxImg" alt="Gallery preview"/>
+    <div class="lightbox-caption">
+      <div>
+        <strong id="lightboxTitle" style="display:block;color:#fff"></strong>
+        <span id="lightboxSub" style="color:var(--muted)"></span>
+      </div>
+      <div class="badge">The Glow Box Gallery</div>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BeautySalon",
+  "name":"The Glow Box Unisex Salon",
+  "telephone":"+91 91137 27139",
+  "email":"theglowboxpatna@gmail.com",
+  "description":"Luxury unisex salon in Patna offering premium hair, skin, grooming, spa and bridal services. Since 2015.",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Singh Complex, Bari Road, near Radha Krishna mandir, Dariyapur Gola, Dujra Diara",
+    "addressLocality":"Patna",
+    "addressRegion":"Bihar",
+    "postalCode":"800004",
+    "addressCountry":"IN"
+  },
+  "openingHours":["Mo-Su 09:00-21:00"],
+  "priceRange":"Contact us for pricing",
+  "url":"https://example.com"
+}
+</script>
+
+<script>
+  const WA = "919113727139";
+
+  const SERVICES = {
+    women: {
+      "Hair": ["Luxury Haircut & Designer Finish","Signature Blow Dry","Root Touch-Up","Global Hair Colour","Hair Spa Ritual"],
+      "Skin": ["Express Cleanup","Gold Facial Therapy","Brightening Detan Ritual","Hydra Glow Cleanup","Threading & Brow Design"],
+      "Spa": ["Aroma Head Massage","Hand Spa Ceremony","Foot Spa Ceremony","Relaxing Back Massage","Manicure & Pedicure Duo"],
+      "Bridal": ["Bridal Consultation & Look Planning","Bridal HD Makeup","Reception Glam Makeup","Saree / Lehenga Draping","Bridal Hair Styling"],
+      "Treatments": ["Keratin Smoothing","Botox Hair Therapy","Scalp Detox Treatment","Advanced Smoothening","Hair Repair Mask Ritual"],
+      "Premium Packages": ["Glow Box Luxe Refresh Package","Pre-Event Radiance Package","Wedding Guest Glam Package","Premium Party Makeup & Hair","Complete Bridal Luxury Package"]
+    },
+    men: {
+      "Hair": ["Precision Haircut","Hair Wash & Style","Beard Design","Root Colour / Grey Blending","Scalp Rejuvenation Spa"],
+      "Skin": ["Express Cleanse Facial","Tan Removal Cleanup","Charcoal Detox Facial","Anti-Fatigue Eye Refresh","De-Tan Polish"],
+      "Grooming": ["Beard Shaping & Detailing","Shave & Skin Soothe","Eyebrow Grooming","Hand Grooming","Foot Grooming"],
+      "Spa": ["Head Massage Ritual","Shoulder & Neck Relax Therapy","Foot Reflex Relax","Manicure & Pedicure Combo","Stress Relief Spa Session"],
+      "Treatments": ["Hair Smoothening for Men","Anti-Hair Fall Therapy","Dandruff Control Treatment","Scalp Detox Scrub","Hair Repair & Protein Ritual"],
+      "Premium Packages": ["Executive Grooming Package","Occasion Ready Package","Groom Luxe Skin & Hair Package","Pre-Wedding Groom Package","Complete Premium Makeover"]
+    }
+  };
+
+  /* 
+    Gallery images: carefully chosen Unsplash photos that match the luxury salon vibe.
+    All are publicly accessible high-quality images.
+  */
+  const GALLERY = [
+    {
+      title:"Luxury Styling Studio",
+      subtitle:"Premium salon interior",
+      url:"https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85",
+      cls:"wide"
+    },
+    {
+      title:"Precision Hair Artistry",
+      subtitle:"Expert hair styling",
+      url:"https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=85",
+      cls:"tall"
+    },
+    {
+      title:"Elegant Salon Ambience",
+      subtitle:"The Glow Box experience",
+      url:"https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85",
+      cls:""
+    },
+    {
+      title:"Premium Colour & Finish",
+      subtitle:"Hair colour and treatment",
+      url:"https://images.unsplash.com/photo-1522337660859-02fbefda45f6?auto=format&fit=crop&w=700&q=85",
+      cls:""
+    },
+    {
+      title:"Men's Grooming Suite",
+      subtitle:"Refined barbering and care",
+      url:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85",
+      cls:"wide"
+    },
+    {
+      title:"Bridal Glow Artistry",
+      subtitle:"Occasion makeup & styling",
+      url:"https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85",
+      cls:""
+    },
+    {
+      title:"Skin Ritual & Facial",
+      subtitle:"Hydrating skin treatments",
+      url:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85",
+      cls:""
+    },
+    {
+      title:"Manicure & Nail Art",
+      subtitle:"Premium hand and nail care",
+      url:"https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=700&q=85",
+      cls:""
+    },
+    {
+      title:"Relaxing Spa Session",
+      subtitle:"Head and body massage rituals",
+      url:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85",
+      cls:"wide"
+    }
+  ];
+
+  const $ = (s, p=document) => p.querySelector(s);
+  const $$ = (s, p=document) => [...p.querySelectorAll(s)];
+  const esc = s => String(s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+  /* ── SERVICES ── */
+  function renderServices(){
+    const group = (label, items, open) => `
+      <details class="service-group" ${open?"open":""}>
+        <summary><span>${esc(label)}</span><span class="count">${items.length} services</span></summary>
+        <div class="service-list">${items.map(i=>`<span class="service-chip">${esc(i)}</span>`).join("")}</div>
+      </details>`;
+    $("#womenServices").innerHTML = Object.entries(SERVICES.women).map(([l,i],x)=>group(l,i,x===0)).join("");
+    $("#menServices").innerHTML = Object.entries(SERVICES.men).map(([l,i],x)=>group(l,i,x===0)).join("");
+    const sel = $("#service");
+    const wOpts = Object.entries(SERVICES.women).map(([c,items])=>`<optgroup label="Women's - ${esc(c)}">${items.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("")}</optgroup>`).join("");
+    const mOpts = Object.entries(SERVICES.men).map(([c,items])=>`<optgroup label="Men's - ${esc(c)}">${items.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("")}</optgroup>`).join("");
+    sel.innerHTML = `<option value="">Choose a service</option>${wOpts}${mOpts}<option value="Consultation / Not Sure Yet">Consultation / Not Sure Yet</option>`;
+  }
+
+  /* ── GALLERY ── */
+  function renderGallery(){
+    $("#galleryGrid").innerHTML = GALLERY.map((item,i)=>`
+      <figure class="gallery-item ${item.cls} reveal" data-title="${esc(item.title)}" data-subtitle="${esc(item.subtitle)}" style="min-height:${item.cls==='tall'?'400px':'260px'}">
+        <img
+          src="${item.url}"
+          alt="${esc(item.title)}"
+          loading="${i<4?'eager':'lazy'}"
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"
+        />
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.65) 100%);pointer-events:none;z-index:1"></div>
+        <figcaption class="gallery-meta" style="z-index:2">
+          <strong>${esc(item.title)}</strong>
+          <span>${esc(item.subtitle)}</span>
+        </figcaption>
+      </figure>
+    `).join("");
+
+    /* Fallback if any image fails */
+    $$("img", $("#galleryGrid")).forEach(img => {
+      img.onerror = function(){
+        if(!this.dataset.err){
+          this.dataset.err = "1";
+          this.src = "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=700&q=80";
+        }
+      };
+    });
+  }
+
+  /* ── LIGHTBOX ── */
+  function setupLightbox(){
+    const lb = $("#lightbox"), lbImg = $("#lightboxImg"), lbT = $("#lightboxTitle"), lbS = $("#lightboxSub");
+    $("#galleryGrid").addEventListener("click", e => {
+      const fig = e.target.closest(".gallery-item");
+      if(!fig) return;
+      const img = $("img", fig);
+      lbImg.src = img.src;
+      lbT.textContent = fig.dataset.title||"";
+      lbS.textContent = fig.dataset.subtitle||"";
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden","false");
+    });
+    const close = () => { lb.classList.remove("open"); lb.setAttribute("aria-hidden","true"); };
+    $("#lightboxClose").addEventListener("click", close);
+    lb.addEventListener("click", e => { if(e.target===lb) close(); });
+    document.addEventListener("keydown", e => { if(e.key==="Escape") close(); });
+  }
+
+  /* ── REVEAL ── */
+  function setupReveal(){
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("show"); obs.unobserve(e.target); }});
+    }, {threshold:.1});
+    $$(".reveal").forEach(el => obs.observe(el));
+  }
+
+  /* ── NAV ── */
+  function setupNav(){
+    const topbar = $("#topbar"), toggle = $("#menuToggle"), nav = $("#navMenu");
+    const dd = $("#servicesDropdown"), trigger = $("#servicesTrigger");
+    window.addEventListener("scroll", () => topbar.classList.toggle("scrolled", window.scrollY > 10));
+    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+    trigger.addEventListener("click", e => {
+      e.preventDefault();
+      dd.classList.toggle("open");
+      trigger.setAttribute("aria-expanded", dd.classList.contains("open"));
+    });
+    document.addEventListener("click", e => {
+      if(!dd.contains(e.target)){ dd.classList.remove("open"); trigger.setAttribute("aria-expanded","false"); }
+      if(window.innerWidth<=860 && !$(".nav-shell").contains(e.target)) nav.classList.remove("open");
+    });
+    $$(".nav a, .dropdown-panel a").forEach(link => {
+      link.addEventListener("click", () => {
+        if(link.id!=="downloadMenuNav"){ nav.classList.remove("open"); dd.classList.remove("open"); }
+      });
+    });
+  }
+
+  /* ── INTRO ── */
+  function setupIntro(){
+    $("#enterGlow").addEventListener("click", () => document.body.classList.add("entered"));
+  }
+
+  /* ── BOOKING FORM ── */
+  function setupBooking(){
+    $("#bookingForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const v = id => $(id).value.trim();
+      const text = [
+        "Hello The Glow Box Unisex Salon,",
+        "",
+        "I would like to book an appointment.",
+        `Name: ${v("#name")}`,
+        `Phone: ${v("#phone")}`,
+        `Service: ${v("#service")||"Consultation / Not Sure Yet"}`,
+        `Preferred Date: ${$("#date").value||"-"}`,
+        `Preferred Time: ${$("#time").value||"-"}`,
+        `Message: ${v("#message")||"-"}`,
+        "",
+        "Please confirm availability. Thank you."
+      ].join("\n");
+      window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`,"_blank","noopener");
+    });
+  }
+
+  /* ── PDF DOWNLOAD ── */
+  function pdfEsc(s){ return String(s).replace(/\\/g,"\\\\").replace(/\(/g,"\\(").replace(/\)/g,"\\)"); }
+
+  function buildPage(title, subtitle, sections, foot){
+    let s = "0 0 0 rg 0 0 595 842 re f\n";
+    s += "0.84 0.70 0.42 rg 36 792 523 2 re f\n";
+    s += `BT /F2 28 Tf 48 770 Td 0.95 0.87 0.63 rg (${pdfEsc(title)}) Tj ET\n`;
+    if(subtitle) s += `BT /F1 12 Tf 48 748 Td 0.92 0.90 0.86 rg (${pdfEsc(subtitle)}) Tj ET\n`;
+    let y = 712;
+    sections.forEach(sec => {
+      s += `BT /F2 16 Tf 48 ${y} Td 0.84 0.70 0.42 rg (${pdfEsc(sec.heading)}) Tj ET\n`;
+      y -= 20;
+      sec.lines.forEach(l => { s += `BT /F1 11 Tf 58 ${y} Td 0.92 0.90 0.86 rg (- ${pdfEsc(l)}) Tj ET\n`; y -= 16; });
+      y -= 12;
+    });
+    if(foot) s += `BT /F1 10 Tf 48 36 Td 0.70 0.66 0.61 rg (${pdfEsc(foot)}) Tj ET\n`;
+    return s;
+  }
+
+  function downloadPDF(){
+    const W = SERVICES.women, M = SERVICES.men;
+    const pages = [
+      buildPage("The Glow Box Unisex Salon","Where Luxury Meets Your Glow - Service Menu",[
+        {heading:"Salon Details",lines:["Since 2015","Open Daily: 9:00 AM to 9:00 PM","30% off on first visit","Phone / WhatsApp: +91 91137 27139","Email: theglowboxpatna@gmail.com","In-parlour services only"]},
+        {heading:"Address",lines:["Singh Complex, Bari Road","near Radha Krishna mandir","Dariyapur Gola, Dujra Diara","Patna, Bihar 800004"]}
+      ],"The Glow Box Unisex Salon"),
+      buildPage("Women's Services","Hair, Skin, Spa",[{heading:"Hair",lines:W["Hair"]},{heading:"Skin",lines:W["Skin"]},{heading:"Spa",lines:W["Spa"]}],"Page 2"),
+      buildPage("Women's Services - Continued","Bridal, Treatments, Packages",[{heading:"Bridal",lines:W["Bridal"]},{heading:"Treatments",lines:W["Treatments"]},{heading:"Premium Packages",lines:W["Premium Packages"]}],"Page 3"),
+      buildPage("Men's Services","Hair, Skin, Grooming",[{heading:"Hair",lines:M["Hair"]},{heading:"Skin",lines:M["Skin"]},{heading:"Grooming",lines:M["Grooming"]}],"Page 4"),
+      buildPage("Men's Services - Continued","Spa, Treatments, Packages",[{heading:"Spa",lines:M["Spa"]},{heading:"Treatments",lines:M["Treatments"]},{heading:"Premium Packages",lines:M["Premium Packages"]}],"Contact +91 91137 27139 for pricing")
+    ];
+    const objs = [];
+    objs[1]="<< /Type /Catalog /Pages 2 0 R >>";
+    objs[2]="";
+    objs[3]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+    objs[4]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>";
+    let idx=5; const refs=[];
+    pages.forEach(stream => {
+      const po=idx++,co=idx++;
+      refs.push(po);
+      objs[po]=`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${co} 0 R >>`;
+      objs[co]=`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`;
+    });
+    objs[2]=`<< /Type /Pages /Kids [${refs.map(n=>`${n} 0 R`).join(" ")}] /Count ${refs.length} >>`;
+    let pdf="%PDF-1.4\n";
+    const off=[0];
+    for(let i=1;i<objs.length;i++){ off[i]=pdf.length; pdf+=`${i} 0 obj\n${objs[i]}\nendobj\n`; }
+    const xr=pdf.length;
+    pdf+=`xref\n0 ${objs.length}\n0000000000 65535 f \n`;
+    for(let i=1;i<objs.length;i++) pdf+=`${String(off[i]).padStart(10,"0")} 00000 n \n`;
+    pdf+=`trailer\n<< /Size ${objs.length} /Root 1 0 R >>\nstartxref\n${xr}\n%%EOF`;
+    const blob=new Blob([pdf],{type:"application/pdf"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="The-Glow-Box-Service-Menu.pdf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1200);
+  }
+
+  /* ── INIT ── */
+  renderServices();
+  renderGallery();
+  setupLightbox();
+  setupReveal();
+  setupNav();
+  setupIntro();
+  setupBooking();
+
+  $("#downloadMenu").addEventListener("click", downloadPDF);
+  $("#downloadMenuNav").addEventListener("click", e => { e.preventDefault(); downloadPDF(); });
+  $("#year").textContent = new Date().getFullYear();
+  $("#date").min = new Date().toISOString().split("T")[0];
+
+  /* Global image fallback */
+  document.addEventListener("error", e => {
+    if(e.target.tagName==="IMG" && !e.target.dataset.err){
+      e.target.dataset.err="1";
+      e.target.src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=700&q=80";
+    }
+  }, true);
+</script>
+</body>
+</html>
